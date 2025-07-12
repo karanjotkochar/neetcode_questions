@@ -3,6 +3,8 @@ public class q19_reverseLinkedList {
     public static void main(String[] args) {
     }
     public static ListNode reverseList(ListNode head) {
+        // optimal
+        // time = o(n) and space = o(n)
         ListNode prev = null;
         ListNode current = head;
         ListNode temp;
