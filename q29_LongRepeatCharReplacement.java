@@ -30,6 +30,8 @@ public class q29_LongRepeatCharReplacement {
     }
 
     public static int characterReplacement2(String s, int k) {
+        // sliding window
+        // time = o(n) and space = o(n)
         HashMap<Character, Integer> count = new HashMap<>();
         int left = 0;
         int result = 0;
@@ -40,7 +42,7 @@ public class q29_LongRepeatCharReplacement {
             maxf = Math.max(maxf, count.get(s.charAt(right)));
 
             while ((right-left+1) - maxf > k) {
-                count.put(s.charAt(left), count.get(s.charAt(left) - 1) );
+                count.put(s.charAt(left), count.get(s.charAt(left)) - 1 );
                 left++;
             }
             result = Math.max(result, right-left+1);
