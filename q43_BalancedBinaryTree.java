@@ -36,14 +36,14 @@ public class q43_BalancedBinaryTree {
         // time = o(n) and space = o(h)
         return dfs(root)[0] == 1;                                   // the boolean value is 1 or True
     }
-    private static int[] dfs(TreeNode root) {
+    private static int[] dfs(TreeNode root) {                       // calculating boolean and height at the same time
         if (root == null)
-            return new int[]{1,0};                                  // [boolean if balanced tree, height of tree]
+            return new int[]{1,0};                                  // int[i,j] = [boolean value (if balanced tree), height of tree]
 
         int[] left = dfs(root.left);
         int[] right = dfs(root.right);
 
-        boolean balanced = (left[0] == 1 && right[0] == 1) && (Math.abs(left[1] - right[1]) <= 1);
+        boolean balanced = (left[0] == 1 && right[0] == 1) && (Math.abs(left[1] - right[1]) <= 1);          // left[1], right[1] is height
 
         int height = Math.max(left[1], right[1]) + 1;
 
