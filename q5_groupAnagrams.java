@@ -36,8 +36,8 @@ public class q5_groupAnagrams {
 
         for (String s : strs) {
             int[] count = new int[26];
-            for (char c : s.toCharArray()) {
-                count['c' - 'a']++;
+            for (char c : s.toCharArray()) {    // letter frequency
+                count[c - 'a']++;
             }
             String key = Arrays.toString(count);
             result.putIfAbsent(key, new ArrayList<>());
