@@ -28,7 +28,7 @@ public class q6_kFrequentElements {
 
         int[] result = new int[k];
         for (int i=0; i < k; i++) {
-           result[i] = arr.get(i)[1];
+           result[i] = arr.get(i)[0];
         }
 
         return result;
