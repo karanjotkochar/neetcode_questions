@@ -2,9 +2,10 @@ import java.util.Arrays;
 
 public class q8_productOfArray {
     public static void main(String[] args) {
-        int[] nums = {-1,0,1,2,3};
+        int[] nums = {1,2,4,6};
 //        productExceptSelf(nums);
-        System.out.println(Arrays.toString(productExceptSelf(nums)));
+//        System.out.println(Arrays.toString(productExceptSelf(nums)));
+        productExceptSelf2(nums);
     }
 
     public static int[] productExceptSelf(int[] nums) {
@@ -24,6 +25,32 @@ public class q8_productOfArray {
         }
         return ans;
     }
+    public static int[] productExceptSelf2(int[] nums) {
 
-//    TODO: method 2 -- prefix sum
+        // Prefix Sum
+        // time = o(n)
+        // space = o(n)
+
+        int n = nums.length;
+        int[] result = new int[n];
+        int[] prefix = new int[n];
+        int[] suffix = new int[n];
+
+        prefix[0] = 1;
+        for (int i=1; i < n; i++) {
+            prefix[i] = prefix[i-1] * nums[i-1];
+        }
+
+        suffix[n-1] = 1;
+        for (int i=n-2; i>=0; i--) {
+            suffix[i] = suffix[i+1] * nums[i+1];
+        }
+
+        for (int i=0; i<n; i++) {
+            result[i] = prefix[i] * suffix[i];
+        }
+
+        return result;
+
+    }
 }
