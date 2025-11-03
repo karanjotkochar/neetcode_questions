@@ -27,11 +27,13 @@ public class q9_validParentheses {
         Stack<Character> stack = new Stack<>();
         Map<Character, Character> characterMap = new HashMap<>();
 
+        // hash map having pairs: closing --> opening bracket
         characterMap.put(')','(');
         characterMap.put('}','{');
         characterMap.put(']','[');
 
         for (char c : s.toCharArray()) {
+            // iterate--> get closing bracket
             if (characterMap.containsKey(c)){
                 if (!stack.isEmpty() && stack.peek() == characterMap.get(c)) {
                     stack.pop();
@@ -39,6 +41,7 @@ public class q9_validParentheses {
                     return false;
                 }
             }
+            // iterate --> get opening bracket
              else {
                  stack.push(c);
             }
