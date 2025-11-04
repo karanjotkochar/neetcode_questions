@@ -18,7 +18,7 @@ public class q14_validSudoku {
     }
     public static boolean isValidSudoku(char[][] board) {
         // brute force method
-        // time = O(n*n) and space = O(n*n)
+        // time = O(n*n) and space = O(n)
 
         // for rows
         for (int row = 0; row < 9; row++) {
@@ -73,5 +73,7 @@ public class q14_validSudoku {
         return true;
     }
 
-    // TODO: method 2
+    // method 2's:
+    // Using HashSet -- time = o(n*n)
+    // Using Bitmask -- time = o(n*n)
 }
