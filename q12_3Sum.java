@@ -34,12 +34,12 @@ public class q12_3Sum {
         Arrays.sort(nums);
         List<List<Integer>> result = new ArrayList<>();
         for (int i=0; i < nums.length; i++) {
-            if (nums[i] > 0)
+            if (nums[i] > 0)                        // to make sure sum will come zero
                 break;
-            if (i>0 && nums[i] == nums[i-1])
+            if (i>0 && nums[i] == nums[i-1])        // to make sure to avoid duplicates
                 continue;
 
-            int left = i+1; // 2 Sum
+            int left = i+1;                         // 2 Sum
             int right = nums.length-1;
             while (left < right) {
                 int sum = nums[i] + nums[left] + nums[right];
@@ -55,7 +55,7 @@ public class q12_3Sum {
                     left++;
                     right--;
 
-                    while (left < right && nums[left] == nums[left - 1]) {
+                    while (left < right && nums[left] == nums[left - 1]) {      // to make sure to avoid duplicates in 2 sum
                         left++;
                     }
 
