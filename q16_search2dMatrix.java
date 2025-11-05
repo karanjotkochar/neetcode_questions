@@ -8,7 +8,7 @@ public class q16_search2dMatrix {
     }
     public static boolean searchMatrix(int[][] matrix, int target) {
         // brute force
-        // time = O(n)
+        // time = O(m*n)
         for (int row=0; row<matrix.length; row++) {
             for (int col=0; col<matrix[row].length; col++) {
 
