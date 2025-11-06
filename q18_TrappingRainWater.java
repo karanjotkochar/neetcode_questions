@@ -14,7 +14,7 @@ public class q18_TrappingRainWater {
         int result = 0;
 
         for (int i=0; i<n; i++) {
-            int leftMax = height[i];
+            int leftMax = height[i];            // this initialization prevents negative result
             int rightMax = height[i];
 
             for (int j=0; j<i; j++) {
@@ -56,5 +56,5 @@ public class q18_TrappingRainWater {
         }
         return result;
     }
-    // TODO: Two Pointer approach --> time = o(n) and space = o(n)
+    // Method 3: Two Pointer approach --> time = o(n) and space = o(1)
 }
