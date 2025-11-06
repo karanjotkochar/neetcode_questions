@@ -37,10 +37,10 @@ public class q17_longestConsecutiveSequence {
             set.add(num);
         }
 
-        for (int num : set){
-            if (!set.contains(num-1)){
+        for (int num : set){                                    // making different sequences
+            if (!set.contains(num-1)){                          // checking left neighbour -- it should not exist
                 int length = 1;
-                while (set.contains(num + length)) {
+                while (set.contains(num + length)) {            // checking right neighbours -- it should exist
                     length++;
                 }
                 longest = Math.max(longest,length);
