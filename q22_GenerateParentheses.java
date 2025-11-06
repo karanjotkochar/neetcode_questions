@@ -20,6 +20,13 @@ public class q22_GenerateParentheses {
 
     private static void backtrack(int openN, int closedN, int n, List<String> result, StringBuilder stack) {
 
+        // n open, n close
+        // close < open
+
+        // add open --> open < n
+        // add close --> close < open
+        // valid: open = close = n
+
         if (openN == closedN && openN == n) {
             result.add(stack.toString());
             return;
