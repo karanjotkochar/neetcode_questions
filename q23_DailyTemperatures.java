@@ -26,7 +26,7 @@ public class q23_DailyTemperatures {
                 count++;
             }
 
-            count = (j==n) ? 0 : count;
+            count = (j==n) ? 0 : count;     // j==n (end of array, no warmer day found)
             result[i] = count;
         }
         return result;
@@ -41,13 +41,12 @@ public class q23_DailyTemperatures {
         for (int i=0; i<n; i++) {
             int t = temperatures[i];
             while (!stack.isEmpty() && t > stack.peek()[0]) {
-                int[] pair = stack.pop();
-                result[pair[1]] = i-pair[1];
+                int[] pair = stack.pop();                   // pair[0] = temp and pair[1] = ith position
+                result[pair[1]] = i-pair[1];                // this way we add temp difference at ith position /previous position
             }
             stack.push(new int[]{t, i});
         }
         return result;
     }
 
-//    TODO: Return again
 }
