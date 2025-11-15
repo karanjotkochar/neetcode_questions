@@ -2,8 +2,8 @@ import java.util.Arrays;
 
 public class q24_KokoEatingBananas {
     public static void main(String[] args) {
-        int[] piles = {3,6,7,11};
-        int h = 8;
+        int[] piles = {805306368,805306368,805306368};  // {3,6,7,11};
+        int h = 1000000000;                             // 8
         System.out.println(minEatingSpeed(piles, h));
         System.out.println(minEatingSpeed2(piles, h));
     }
@@ -35,7 +35,7 @@ public class q24_KokoEatingBananas {
 
         while (left <= right) {
             int speed = left + ( (right-left)/2 );
-            int totalTime = 0;
+            long totalTime = 0;                         // should be long
 
             for (int pile : piles) {
                 totalTime = totalTime + (int) Math.ceil( (double) pile/speed);
