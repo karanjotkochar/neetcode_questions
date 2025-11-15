@@ -35,7 +35,7 @@ public class q25_FindMinRotatedSortedArray {
         int result = nums[0];
 
         while (left <= right) {
-            if (nums[left] <  nums[right]) {
+            if (nums[left] <  nums[right]) {                    // edge case: when array is sorted
                 result = Math.min(result, nums[left]);
                 break;
             }
@@ -43,9 +43,9 @@ public class q25_FindMinRotatedSortedArray {
             int mid = left + (right-left)/2;
             result = Math.min(result, nums[mid]);
             if (nums[mid] >= nums[left]) {
-                left = mid + 1; // right sorted portion
+                left = mid + 1;                                 // move to right sorted portion
             } else {
-                right = mid - 1; // left sorted portion
+                right = mid - 1;                                // move to left sorted portion
             }
         }
 
