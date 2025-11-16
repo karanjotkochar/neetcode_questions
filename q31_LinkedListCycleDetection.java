@@ -14,7 +14,7 @@ public class q31_LinkedListCycleDetection {
         HashSet<ListNode> set = new HashSet<>();
 
         while (head != null) {
-            if (set.contains(head)) {
+            if (set.contains(head)) {               // HashSet does NOT check node values. It checks node references (memory addresses) --> { head not head.val }
                 return true;
             }
             set.add(head);
