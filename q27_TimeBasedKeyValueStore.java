@@ -41,8 +41,8 @@ class TimeMap {
 
         if (seen == 0)
             return "";
-
-        int back = keyStore.get(key).get(seen).size() - 1;
+                                                                // keyStore.get(key).get(seen).size() --> gives you the size of values at timestamp
+        int back = keyStore.get(key).get(seen).size() - 1;      // keyStore.get(key).get(seen).size()-1 --> gives you the last element
         return keyStore.get(key).get(seen).get(back);
     }
 }
