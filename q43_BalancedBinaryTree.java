@@ -20,7 +20,7 @@ public class q43_BalancedBinaryTree {
         if (Math.abs(leftHeight - rightHeight) > 1)
             return false;
 
-        return isBalanced(root.left) && isBalanced(root.right);
+        return isBalanced(root.left) && isBalanced(root.right);                 // Top to down approach, hence o(n*n)
     }
     private static int heightTree(TreeNode root) {
         if (root == null)
@@ -31,7 +31,7 @@ public class q43_BalancedBinaryTree {
 
         return Math.max(left, right) + 1;
     }
-    public static boolean isBalanced2(TreeNode root) {
+    public static boolean isBalanced2(TreeNode root) {              // Bottom to top approach, hence o(n)
         // Optimized DFS
         // time = o(n) and space = o(h)
         return dfs(root)[0] == 1;                                   // the boolean value is 1 or True
