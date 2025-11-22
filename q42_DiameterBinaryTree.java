@@ -34,6 +34,8 @@ public class q42_DiameterBinaryTree {
         // Optimised DFS                                                    // exactly same, just calculating height and dia at same time
         // time = o(n) and space = o(n) or o(logn)
         int[] result = new int[1];                                          // Global variable -- keeps track of maximum value
+                                                                            // variable is integer array of size 0
+                                                                            // since it's array --> pass by reference in memory calls --> shared reference memory
         dfs(root, result);
         return result[0];
     }
@@ -43,9 +45,9 @@ public class q42_DiameterBinaryTree {
 
         int left = dfs(root.left, result);
         int right = dfs(root.right, result);
-        result[0] = Math.max(result[0], left + right);
+        result[0] = Math.max(result[0], left + right);                      // calculating dia
 
-        return Math.max(left, right) + 1;
+        return Math.max(left, right) + 1;                                   // calculating height
     }
 
 }
