@@ -15,19 +15,19 @@ public class q48_BinaryTreeRightSideView {
         queue.add(root);
 
         while (!queue.isEmpty()) {
-            TreeNode rightSide = null;                      // Initiate right side, to add value every iteration
+            TreeNode rightSide = null;                      // Initiate right side, to add value every iteration            // can be: Integer rightSide = null;
             int qLen = queue.size();
 
             for (int i = 0; i < qLen ; i++){                // Important Loop
                 TreeNode node = queue.poll();               // adds all child nodes one by one + iterates to qLen
                 if (node != null) {                         // @ last qLen = node for result + all child in queue
-                    rightSide = node;
+                    rightSide = node;                                                                                       // can be: rightSide = node.val;
                     queue.add(node.left);
                     queue.add(node.right);
                 }
             }
             if (rightSide != null) {                        // add value inside right side to result
-                result.add(rightSide.val);
+                result.add(rightSide.val);                                                                                  // can be:   result.add(rightSide);
             }
         }
 
