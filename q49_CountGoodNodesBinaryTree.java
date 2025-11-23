@@ -4,6 +4,8 @@ public class q49_CountGoodNodesBinaryTree {
     }
 
     public static int goodNodes(TreeNode root) {
+        // Depth First Search
+        // time = o(n) and space = o(n)
 
         return dfs(root, root.val);
     }
@@ -17,7 +19,7 @@ public class q49_CountGoodNodesBinaryTree {
         maxValue = Math.max(node.val, maxValue);
 
         result += dfs(node.left, maxValue);
-        result += dfs(node.right, maxValue);
+        result += dfs(node.right, maxValue);                    // or result = result + dfs(node.left, maxValue) + dfs(node.right, maxValue)
 
         return result;
     }
