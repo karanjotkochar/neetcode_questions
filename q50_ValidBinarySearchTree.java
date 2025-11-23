@@ -16,8 +16,8 @@ public class q50_ValidBinarySearchTree {
             return false;
         }
 
-        return dfs(node.left, left, node.val)                           // left node cannot be greater than root
+        return dfs(node.left, left, node.val)                           // left node cannot be greater than root --> every value in left subtree is less than node.val(parent)/right bound
                     &&
-                        dfs(node.right, node.val, right);               // right is greater tha root (boundaries)
+                        dfs(node.right, node.val, right);               // right is greater tha root (boundaries) --> every value in right subtree is greater than node.val(parent)/left bound
     }
 }
