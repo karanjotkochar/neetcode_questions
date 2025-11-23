@@ -13,7 +13,7 @@ public class q45_SubtreeAnotherTree {
         System.out.println(isSubtree(root, subRoot));
     }
     public static boolean isSubtree(TreeNode root, TreeNode subRoot) {
-        // Brute force
+        // Brute force -- Depth First Search
         // time = o(m*n) and space = o(m+n)
                                                         // Order of IF Important **
         if (subRoot == null)                            // SubTree is empty, can be part of Big tree (Ex. any leaf node child)
