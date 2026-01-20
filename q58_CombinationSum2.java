@@ -39,7 +39,7 @@ public class q58_CombinationSum2 {
 
         // take/include the current candidate
         current.add(candidates[i]);
-        dfs(candidates, target, i+1, current, total + candidates[i]);
+        backtrack(candidates, target, i+1, current, total + candidates[i]);
 
         // skip/exclude the current candidate plus skipping all duplicates
         current.remove(current.size() - 1);
@@ -47,6 +47,6 @@ public class q58_CombinationSum2 {
         while (i+1 < candidates.length && candidates[i] == candidates[i+1]) {
             i++;
         }
-        dfs(candidates, target, i+1, current, total);
+        backtrack(candidates, target, i+1, current, total);
     }
 }
