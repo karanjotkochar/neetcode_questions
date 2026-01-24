@@ -6,7 +6,9 @@ public class q59_SingleNumber {
         System.out.println(singleNumber(nums));
     }
     public static int singleNumber(int[] nums) {
-        // add comments
+        // Bit Manipulation -- using XOR
+        // time = O(n)
+        // space = O(1)
 
         int result = 0;
 
