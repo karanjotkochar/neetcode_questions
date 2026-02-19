@@ -1,11 +1,11 @@
 import java.util.*;
 
-public class Q66_Twitter {
+public class q66_Twitter {
     private int time;                                       // for ordering tweets, increase with every tweet
     private Map<Integer, List< int[]> > tweetMap;           // list of (time, tweetId)
     private Map<Integer, Set<Integer> > followMap;          // set of (followee Ids)
 
-    public Q66_Twitter() {
+    public q66_Twitter() {
         // TC = O(1) for all methods
         // TC = O(n.m + t.logt) for getNewsFeed method
         // Space = O(N.m + N.M)
