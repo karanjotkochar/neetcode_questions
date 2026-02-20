@@ -30,7 +30,7 @@ public class q70_NonOverlappingIntervals {
 
             } else {
                 result++;
-                prevEnd = Math.min(prevEnd, currEnd);       // in overlap, remove the one woth smaller end time
+                prevEnd = Math.min(prevEnd, currEnd);       // in overlap, keep the one with smaller end time
 
             }
         }
