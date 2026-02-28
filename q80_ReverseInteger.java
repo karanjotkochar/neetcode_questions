@@ -47,7 +47,7 @@ public class q80_ReverseInteger {
             if (result > MAX/10 || (result == MAX/10 && digit > MAX % 10) ) {           // doing MAX/10 --> check if (res * 10) + digit -- exceeds limit
                 return 0;
             }
-            if (result < MIN/10 || ((result == MIN/10 && digit < MIN%10)) ) {
+            if (result < MIN/10 || (result == MIN/10 && digit < MIN % 10) ) {
                 return 0;
             }
 
